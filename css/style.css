@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(246, 236, 219);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+main {
+  background-color: brown;
+  width: 90%;
+  margin: auto;
+  height: 95vh;
+}
+
+#sarch {
+  background-color: aqua;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+
+#results {
+  /* padding: 20px; */
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  width: 24%;
+  border: 1px solid black;
+}
