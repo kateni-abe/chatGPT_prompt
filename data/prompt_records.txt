@@ -1,0 +1,71 @@
+<textarea class='prompt_post shadow_min'>#命令書
+あなたはです。
+以下の制約条件と入力文をもとにを出力してください。
+
+#制約条件
+
+
+#入力文
+
+
+#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
+あなたはです。
+以下の制約条件と入力文をもとにを出力してください。
+
+#制約条件
+
+
+#入力文
+
+
+#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
+あなたはです。
+以下の制約条件と入力文をもとにを出力してください。
+
+#制約条件
+
+
+#入力文
+
+
+#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
+あなたはです。
+以下の制約条件と入力文をもとにを出力してください。
+
+#制約条件
+
+
+#入力文
+
+
+#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
+あなたはです。
+以下の制約条件と入力文をもとにを出力してください。
+
+#制約条件
+
+
+#入力文
+
+
+#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
+あなたはです。
+以下の制約条件と入力文をもとにを出力してください。
+
+#制約条件
+
+
+#入力文
+
+
+#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
+あなたはです。
+以下の制約条件と入力文をもとにを出力してください。
+
+#制約条件
+
+
+#入力文
+
+
+#出力文</textarea>

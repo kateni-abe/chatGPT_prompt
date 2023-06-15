@@ -1,4 +1,4 @@
-$("#addBtn").on("click", function () {
+$("#geneBtn").on("click", function () {
   let i1 = $("#meirei").text();
   let i2 = $("#anata").text();
   let i3 = $("#write_field1").val();
@@ -37,9 +37,22 @@ $("#copyBtn").on("click", function () {
 });
 
 $("#clearBtn").on("click", function () {
-  if (!confirm("内容を削除しますか？")) {
+  if (!confirm("内容を破棄しますか？")) {
     return false;
   } else {
     $("#outputTextArea").val("");
   }
+});
+
+$("#saveBtn").on("click", function () {
+  alert("プロンプトを保存しました！");
+});
+
+//----------------------------------------
+// ▼openBtn
+//----------------------------------------
+$(".openBtn").click(function () {
+  //ボタンがクリックされたら
+  $(this).toggleClass("active"); //ボタン自身に activeクラスを付与し
+  $("#g-nav").toggleClass("panelactive"); //ナビゲーションにpanelactiveクラスを付与
 });
