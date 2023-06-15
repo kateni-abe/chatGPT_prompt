@@ -2,7 +2,9 @@
 // ▼共通設定
 ----------------------------------------*/
 body {
-  background-color: rgb(246, 236, 219);
+  background-color: white;
+  font-family: "IBM Plex Sans JP", sans-serif;
+  color: #202123;
 }
 
 h1 {
@@ -28,7 +30,19 @@ button {
 }
 
 button img {
-  width: 18px;
+  width: 100%;
+}
+
+textarea {
+  font-size: 12px;
+}
+
+input {
+  font-family: "IBM Plex Sans JP", sans-serif;
+}
+
+textarea {
+  font-family: "IBM Plex Sans JP", sans-serif;
 }
 
 /*----------------------------------------
@@ -37,7 +51,7 @@ button img {
 #outer {
   display: flex;
   margin: auto;
-  width: 98%;
+  width: 90%;
   height: 100vh;
 }
 
@@ -55,6 +69,14 @@ button img {
   box-sizing: border-box;
 }
 
+.shadow {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.shadow_min {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
 /*----------------------------------------
 // ▼画面左(input)
 ----------------------------------------*/
@@ -65,20 +87,23 @@ button img {
   margin: 0px 0 15px 5px;
 }
 
-#prompt_base {
-  height: 80%;
-  box-sizing: border-box;
-  background-color: white;
-  padding: 15px;
+#caption p {
+  font-size: 11px;
+}
+
+#prompt_basebox {
   border-radius: 8px;
 }
 
 #prompt_base {
-  font-size: 16px;
+  height: 80%;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 #prompt_base input {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 #prompt_1a {
@@ -93,46 +118,85 @@ button img {
   margin-bottom: 10px;
 }
 
-.write_field {
-  margin: 0 5px 0 5px;
-}
-
 #write_field1 {
   width: 25%;
   margin-bottom: 5px;
+  margin: 0 5px 0 5px;
+  background-color: #ececee;
+  border: none;
+  border-radius: 4px;
 }
 
 #write_field2 {
-  width: 35%;
+  width: 65%;
+  background-color: #ececee;
+  margin: 0 5px 0 0;
+  border: none;
+  border-radius: 4px;
 }
 
 #write_field3 {
-  width: 50%;
-  height: 200px;
+  width: 100%;
+  height: 17vh;
   box-sizing: border-box;
+  resize: none;
+  padding: 10px;
+  letter-spacing: 1px;
+  border: #e2e2e4 solid 1px;
+  border-radius: 6px;
 }
 
 #write_field4 {
-  width: 50%;
-  height: 200px;
+  width: 100%;
+  height: 17vh;
   box-sizing: border-box;
+  resize: none;
+  padding: 10px;
+  letter-spacing: 1px;
+  border: #e2e2e4 solid 1px;
+  border-radius: 6px;
+}
+
+#write_field5 {
+  width: 100%;
+  height: 17vh;
+  box-sizing: border-box;
+  resize: none;
+  padding: 10px;
+  letter-spacing: 1px;
+  border: #e2e2e4 solid 1px;
+  border-radius: 6px;
 }
 
 #btnbox1 {
-  background-color: #333;
+  background-color: white;
   display: flex;
   justify-content: flex-end;
-  padding: 10px;
-  border-radius: 0 0 8px 8px;
+  padding: 8px;
 }
 
-#addBtn {
-  background-color: white;
+#geneBtn {
+  background-color: #202123;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  width: 150px;
+  cursor: pointer;
 }
 
-#addBtn img {
-  width: 20px;
-  vertical-align: middle;
+#btnbox1 :hover {
+  background-color: #10a37f;
+  transition: 0.3s;
+}
+
+.flex_col {
+  display: flex;
+  flex-flow: column;
+}
+
+.flex_row {
+  display: flex;
+  flex-flow: row;
 }
 
 /*----------------------------------------
@@ -140,7 +204,8 @@ button img {
 ----------------------------------------*/
 
 #btnbox2 {
-  background-color: #333;
+  background-color: #202123;
+  height: 4%;
   display: flex;
   justify-content: flex-end;
   padding: 10px;
@@ -148,16 +213,226 @@ button img {
 }
 
 #copyBtn {
-  margin-right: 6px;
+  margin-right: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#copyBtn :hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.1s all;
+  opacity: 0.8;
+}
+
+#clearBtn {
+  margin-right: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#clearBtn :hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.1s all;
+  opacity: 0.8;
+}
+
+#saveBtn {
+  margin-right: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#saveBtn :hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.1s all;
+  opacity: 0.5;
+}
+
+#chatgptBtn {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+#chatgptBtn :hover {
+  transform: scale(1.08, 1.08);
+  transition: 0.1s all;
+  opacity: 0.5;
+}
+
+#outputbox {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 
 #outputTextArea {
   border: none;
   resize: none;
-  height: 100%;
+  width: 100%;
+  height: 93.25%;
   box-sizing: border-box;
   padding: 20px;
   border-radius: 0 0 8px 8px;
-  font-size: 16px;
   letter-spacing: 1px;
+}
+
+/*----------------------------------------
+// ▼レコード一覧
+----------------------------------------*/
+#records_box {
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100%);
+  justify-content: center;
+  grid-gap: 1rem;
+}
+
+.prompt_post {
+  width: 43%;
+  height: 30vh;
+  resize: none;
+  padding: 10px;
+  margin: 5px;
+  letter-spacing: 1px;
+  border: #ececee solid 1px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+#chat_gpt {
+  width: 50%;
+  height: 100%;
+  background-color: aqua;
+}
+
+#chat_gpt iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/*----------------------------------------
+// ▼ナビゲーションゲーション
+----------------------------------------*/
+#g-nav {
+  /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+  position: fixed;
+  z-index: 999;
+  /*ナビのスタート位置と形状*/
+  top: 0;
+  left: -25%;
+  width: 18%;
+  height: 100vh; /*ナビの高さ*/
+  background: #202123;
+  /*動き*/
+  transition: all 0.2s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive {
+  left: 0;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  /*ナビゲーション天地中央揃え*/
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li {
+  list-style: none;
+  text-align: center;
+}
+
+#g-nav li a {
+  color: #fff;
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+  padding: 5px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/*----------------------------------------
+// ▼openBtnのトランスフォーム
+----------------------------------------*/
+.openBtn {
+  position: fixed;
+  z-index: 9999; /*ボタンを最前面に*/
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+/*×に変化*/
+.openBtn span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  height: 2px;
+  /* border-radius: 2px; */
+  background-color: #999;
+  width: 45%;
+}
+
+.openBtn span:nth-of-type(1) {
+  top: 15px;
+}
+
+.openBtn span:nth-of-type(2) {
+  top: 23px;
+}
+
+.openBtn span:nth-of-type(3) {
+  top: 31px;
+}
+
+.openBtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openBtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openBtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/*----------------------------------------
+// ▼画面遷移のフェード class wrap
+----------------------------------------*/
+
+.fade {
+  animation: fadein 0.5s forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
