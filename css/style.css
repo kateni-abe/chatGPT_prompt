@@ -1,6 +1,10 @@
 /*----------------------------------------
 // ▼共通設定
 ----------------------------------------*/
+html {
+  font-size: 10px;
+}
+
 body {
   background-color: white;
   font-family: "IBM Plex Sans JP", sans-serif;
@@ -88,7 +92,7 @@ textarea {
 }
 
 #caption p {
-  font-size: 11px;
+  font-size: 0.01vmax;
 }
 
 #prompt_basebox {
@@ -135,7 +139,7 @@ textarea {
   border-radius: 4px;
 }
 
-#write_field3 {
+.write_field {
   width: 100%;
   height: 17vh;
   box-sizing: border-box;
@@ -146,20 +150,9 @@ textarea {
   border-radius: 6px;
 }
 
-#write_field4 {
+.write_field_h {
   width: 100%;
-  height: 17vh;
-  box-sizing: border-box;
-  resize: none;
-  padding: 10px;
-  letter-spacing: 1px;
-  border: #e2e2e4 solid 1px;
-  border-radius: 6px;
-}
-
-#write_field5 {
-  width: 100%;
-  height: 17vh;
+  height: 5vh;
   box-sizing: border-box;
   resize: none;
   padding: 10px;
@@ -173,6 +166,16 @@ textarea {
   display: flex;
   justify-content: flex-end;
   padding: 8px;
+}
+
+#addBtn {
+  background-color: #202123;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  width: 150px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 #geneBtn {
@@ -205,11 +208,27 @@ textarea {
 
 #btnbox2 {
   background-color: #202123;
+  width: 100%;
   height: 4%;
-  display: flex;
-  justify-content: flex-end;
+  display: table;
   padding: 10px;
   border-radius: 8px 8px 0 0;
+  box-sizing: border-box;
+}
+#prompt_title {
+  width: 98%;
+  height: 80%;
+  font-size: 12px;
+  padding-left: 5px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.btnbox2_innner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
 }
 
 #copyBtn {
@@ -276,43 +295,14 @@ textarea {
   letter-spacing: 1px;
 }
 
-/*----------------------------------------
-// ▼レコード一覧
-----------------------------------------*/
-#records_box {
-  width: 50%;
-  height: 100vh;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 20px;
-  overflow: scroll;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 100%);
-  justify-content: center;
-  grid-gap: 1rem;
-}
-
-.prompt_post {
-  width: 43%;
-  height: 30vh;
-  resize: none;
-  padding: 10px;
-  margin: 5px;
-  letter-spacing: 1px;
-  border: #ececee solid 1px;
-  border-radius: 6px;
-  font-size: 11px;
-}
-
-#chat_gpt {
-  width: 50%;
-  height: 100%;
-  background-color: aqua;
-}
-
-#chat_gpt iframe {
-  width: 100%;
-  height: 100%;
+.btnAdd {
+  background-color: #202123;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  width: 150px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 /*----------------------------------------
@@ -351,7 +341,6 @@ textarea {
 
 #g-nav li {
   list-style: none;
-  text-align: center;
 }
 
 #g-nav li a {
@@ -359,10 +348,14 @@ textarea {
   font-family: "IBM Plex Sans JP", sans-serif;
   font-weight: 300;
   text-decoration: none;
-  padding: 5px;
+  padding: 10px 0 10px 0;
   display: block;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+#g-nav :hover {
+  color: #10a37f;
 }
 
 /*----------------------------------------

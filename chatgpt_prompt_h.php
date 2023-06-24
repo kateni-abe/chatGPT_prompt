@@ -50,7 +50,7 @@
         ==================================-->
         <div id="inner1" class="fade">
             <div id="caption">
-                <h2>深津式プロンプト</h2>
+                <h2>林式プロンプト（基本型）</h2>
                 <p>
                     ChatGPTはユーザーの様々な質問や命令に対し、膨大な学習データの中から確率の高い値を返すAIツールです。<br />
                     より精度の高い値を取得するためには、情報の参照する領域を限定した上で、処理を実行させることが重要です。
@@ -61,37 +61,48 @@
         ==================================-->
             <div id="prompt_basebox" class="shadow">
                 <div id="prompt_base">
-                    <h3 id="meirei">#命令書</h3>
-                    <div class="margin_b">
-                        <div id="prompt_1a">
-                            <p id="anata">あなたは</p>
-                            <input id="write_field1" type="text" placeholder="（例）コピーライター" />
-                            <p id="desu">です。</p>
-                        </div>
-                        <div id="prompt_1b" class="flex_col">
-
-                            <p id="ika">以下の制約条件と入力文をもとに</p>
-                            <div class="flex_row">
-                                <input id="write_field2" type="text" placeholder="（例）ネットで話題になる魅力的なタイトル案" />
-                                <p id="shutsuryoku">を出力してください。</p>
-                            </div>
-                        </div>
-                    </div>
                     <div id="prompt_2" class="margin_b">
-                        <h3 id="seiyaku">#制約条件</h3>
-                        <textarea name="" id="write_field3" class="write_field" cols="30" rows="10"
-                            placeholder="（例）※要望やターゲットについて箇条書きで記入してください&#13;・文字数は20文字程度&#13;・初学者にもわかりやすく&#13;・重要なキーワードを取り残さない&#13;・文章を簡潔に"></textarea>
+                        <h3 id="seiyaku"># 前提条件</h3>
+                        <textarea name="" id="write_field3" class="write_field_h" cols="30" rows="10"
+                            placeholder="どんな役割で、どんなゴールを達成したいのかを定義する。"></textarea>
                     </div>
                     <div id="prompt_3" class="margin_b">
-                        <h3 id="nyuryoku">#入力文</h3>
-                        <textarea name="" id="write_field4" class="write_field" cols="30" rows="10"
-                            placeholder="（例）ChatGPTをみんなで学ぼう"></textarea>
+                        <h3 id="nyuryoku"># このコンテンツの詳細</h3>
+                        <textarea name="" id="write_field4" class="write_field_h" cols="30" rows="10"
+                            placeholder="出してほしい成果物を定義する。"></textarea>
                     </div>
                     <div id="prompt_4" class="margin_b">
-                        <h3 id="result_text">#出力文</h3>
-                        <textarea name="" id="write_field5" class="write_field" cols="30" rows="10"
-                            placeholder="（例）&#13;・タイトル案１:&#13;・タイトル案2:&#13;・タイトル案3:&#13;・タイトル案4:&#13;・タイトル案5:"></textarea>
+                        <h3 id="result_text"># 変数の定義と、ゴール設定</h3>
+                        <textarea name="" id="write_field5" class="write_field_h" cols="30" rows="10"
+                            placeholder="理想の成果物を出してもらうための要素（内容、構成、制約条件など）を書き入れる。"></textarea>
                     </div>
+                    <div id="prompt_5" class="margin_b">
+                        <h3 id="result_text"># 手順の実行プロセス</h3>
+                        <textarea name="" id="write_field6" class="write_field_h" cols="30" rows="10"
+                            placeholder="成果物を出すまでの手順、チェックポイント、注意点などを指示する。"></textarea>
+                    </div>
+
+                    <div id="prompt_6" class="margin_b">
+                        <h3 id="result_text"># ユーザーへの確認事項（指定したい時のみ）</h3>
+                        <textarea name="" id="write_field7" class="write_field_h" cols="30" rows="10"
+                            placeholder="成果物を出す前に、ユーザー（あなた）に対してGPT側から確認してほしいことを書き入れる。"></textarea>
+                    </div>
+                    <div id="prompt_7" class="margin_b">
+                        <h3 id="result_text"># 例外処理（指定したい時のみ）</h3>
+                        <textarea name="" id="write_field8" class="write_field_h" cols="30" rows="10"
+                            placeholder="変数や実行プロセスについて例外的に対応する際の基準を書き入れる。"></textarea>
+                    </div>
+                    <div id="prompt_8" class="margin_b">
+                        <h3 id="result_text"># フィードバックループ</h3>
+                        <textarea name="" id="write_field9" class="write_field_h" cols="30" rows="10"
+                            placeholder="成果物を出す前に、GPT自ら成果物の内容を「改善」するように指示する。"></textarea>
+                    </div>
+                    <div id="prompt_8" class="margin_b">
+                        <h3 id="result_text"># 成果物の生成</h3>
+                        <textarea name="" id="write_field9" class="write_field_h" cols="30" rows="10"
+                            placeholder="最終的な回答の出し方を指示する。"></textarea>
+                    </div>
+
                     <div id="btnbox1">
                         <!--==================================
                             ▼ボタンエリア１
@@ -110,21 +121,15 @@
         ==================================-->
         <div id="inner2" class="fade">
             <form id="outputbox" class="shadow" action="chatgpt_prompt_storage.php" method="POST">
-
                 <div id="btnbox2">
-                    <div class="btnbox2_innner">
-                        <input id="prompt_title" type="text" name="title" placeholder="プロンプトタイトル"></input>
-                    </div>
-                    <div class="btnbox2_innner">
-                        <button title="コピー" id="copyBtn" type="button"><img src="img/copy.svg" alt="" /></button>
-                        <button title="破棄" id="clearBtn" type="button"><img src="img/clear.svg" alt="" /></button>
-                        <button title="保存" id="saveBtn"><img src="img/save.svg" alt="" /></button>
-                        <a title="ChatGPT" href="https://chat.openai.com/" target="_blank"><button id="chatgptBtn"
-                                type="button"><img src="img/chatgpt.svg" alt="" /></button></a>
-                    </div>
+                    <button title="コピー" id="copyBtn" type="button"><img src="img/copy.svg" alt="" /></button>
+                    <button title="破棄" id="clearBtn" type="button"><img src="img/clear.svg" alt="" /></button>
+                    <button title="保存" id="saveBtn"><img src="img/save.svg" alt="" /></button>
+                    <a title="ChatGPT" href="https://chat.openai.com/" target="_blank"><button id="chatgptBtn"
+                            type="button"><img src="img/chatgpt.svg" alt="" /></button></a>
 
                 </div>
-                <textarea name="prompt" id="outputTextArea" cols="30" rows="10"
+                <textarea name="record" id="outputTextArea" cols="30" rows="10"
                     placeholder="こちらに直接記入して、プロンプトを保存することも可能です。"></textarea>
             </form>
         </div>
