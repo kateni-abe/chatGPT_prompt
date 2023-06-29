@@ -1,0 +1,144 @@
+/*----------------------------------------
+// ▼レコード一覧
+----------------------------------------*/
+#records_box {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 45%);
+  justify-content: center;
+  grid-gap: 1rem;
+}
+
+#records_box2 {
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100%);
+  justify-content: center;
+  grid-gap: 1rem;
+}
+
+.prompt_post {
+  width: 90%;
+  height: 40vh;
+  padding: 15px;
+  margin: 5px;
+  letter-spacing: 1px;
+  border: #ececee solid 1px;
+  border-radius: 6px;
+  font-size: 12px;
+  display: table;
+}
+
+.r_prompt_title {
+  width: 100%;
+  margin-bottom: 5px;
+  border: #ececee solid 1px;
+}
+
+.r_prompt_text {
+  height: 85%;
+  width: 100%;
+  resize: none;
+  border: #ececee solid 1px;
+}
+
+.infobox {
+  display: table;
+  margin-left: auto;
+}
+
+.r_prompt_data {
+  font-size: 6px;
+  padding-right: 10px;
+  color: rgb(140, 140, 140);
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.prompt_post2 {
+  width: 43%;
+  height: 30vh;
+  resize: none;
+  padding: 15px;
+  margin: 5px;
+  letter-spacing: 1px;
+  border: #ececee solid 1px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+#chat_gpt {
+  width: 50%;
+  height: 100%;
+}
+
+#chat_gpt iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/*-------------------------------------------
+// アップデートボタン(破棄ボタンはstyle.cssを流用)
+-------------------------------------------*/
+#r_clearBtn {
+  vertical-align: middle;
+  cursor: pointer;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#r_clearBtn :hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.1s all;
+  opacity: 0.8;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#updateBtn {
+  vertical-align: middle;
+  cursor: pointer;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#updateBtn :hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.1s all;
+  opacity: 0.8;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*----------------------------------------
+// ▼上部ボタンBOX
+----------------------------------------*/
+
+#updatebtn_box {
+  height: 70px; /*高さ指定*/
+  width: 100%; /*横幅指定*/
+  /*以下はレイアウトのためのCSS*/
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  color: #fff;
+}
+
+/*JSを使いfixedクラスが付与された際の設定*/
+#header.fixed {
+  position: fixed; /*fixedを設定して固定*/
+  z-index: 999; /*最前面へ*/
+  top: 0; /*位置指定*/
+  left: 0; /*位置指定*/
+}

@@ -1,9 +1,6 @@
 <?php
-//----------------------------------------
-// ▼データベースへの書き込み処理用PHP
-//----------------------------------------
-
 // var_dump($_POST);
+// exit;
 
 //---------------------------------------------------------------
 // ▼POSTデータ確認
@@ -11,24 +8,35 @@
 //---------------------------------------------------------------
 
 if(
-    !isset($_POST["title"])||$_POST["title"]==""||
-    !isset($_POST["prompt"])||$_POST["prompt"]==""
-    ){
-        exit("入力情報が不足しています");
-    }
+!isset($_POST["name"])||$_POST["name"]==""||
+!isset($_POST["email"])||$_POST["email"]==""||
+!isset($_POST["prompt"])||$_POST["prompt"]==""||
+!isset($_POST["password"])||$_POST["password"]==""||
+!isset($_POST["address"])||$_POST["address"]==""||
+!isset($_POST["phone"])||$_POST["phone"]==""||
+!isset($_POST["github_url"])||$_POST["github_url"]==""
+){
+    exit("ParamError");
+}
 
 ///----------------------------------------
 // ▼データ定義
 //----------------------------------------
-$title=$_POST["title"];
+$name=$_POST["name"];
+$email=$_POST["email"];
 $prompt=$_POST["prompt"];
+$password=$_POST["password"];
+$address=$_POST["address"];
+$phone=$_POST["phone"];
+$github_url=$_POST["github_url"];
+
 
 //---------------------------------------------------------------------------------------------
 // ▼DB接続（エラー処理追加）
 // 以下の内容を変更しながら使用
 // ▶dbname:データベース名  host=使用しているサーバー "root"の場所はID ""の部分はサーバーのパスワードを記述
 //---------------------------------------------------------------------------------------------
-$dbn='mysql:dbname=gs_d13_19;charset=utf8mb4;port=3306;host=localhost';//DB名
+$dbn='mysql:dbname=prompt;charset=utf8mb4;port=3306;host=localhost';//DB名
 $user = 'root'; //DB 接続時のユーザ名
 $pwd = ''; //DB 接続時のパスワード
 
@@ -41,6 +49,7 @@ echo json_encode(["db error:" => "{$e->getMessage()}"]);
 exit();
 }
 
+
 //----------------------------------------------
 // ▼データ登録sql登録
 // INSERT INTO テーブル名(取得する値の情報)VALUES();
@@ -48,8 +57,8 @@ exit();
 //----------------------------------------------
 
 $sql=
-'INSERT INTO prompt_fukatsu (id,title,prompt,created_at,update_at)
-VALUES(NULL,:title,:prompt,now(),now())';
+'INSERT INTO users (id,name,email,prompt,password,address,phone,github_url,indate)
+VALUES(NULL,:a1,:a2,:a3,:a4,:a5,:a6,:a7,now())';
 
 //-------------------------------------------------------------------
 // ▼バインド変数を設定
@@ -59,8 +68,13 @@ VALUES(NULL,:title,:prompt,now(),now())';
 
 $stmt = $pdo->prepare($sql);
 
-$stmt->bindValue(':title',$title, PDO::PARAM_STR);
-$stmt->bindValue(':prompt',$prompt, PDO::PARAM_STR);
+$stmt->bindValue(':a1',$name, PDO::PARAM_STR);
+$stmt->bindValue(':a2',$email, PDO::PARAM_STR);
+$stmt->bindValue(':a3',$prompt, PDO::PARAM_STR);
+$stmt->bindValue(':a4',$password, PDO::PARAM_STR);
+$stmt->bindValue(':a5',$address, PDO::PARAM_STR);
+$stmt->bindValue(':a6',$phone, PDO::PARAM_STR);
+$stmt->bindValue(':a7',$github_url, PDO::PARAM_STR);
 
 //-----------------------------------------------------
 // ▼SQL実行（実行に失敗すると `sql error ...` が出力される）
@@ -72,7 +86,9 @@ try {
     exit();
   }
 
-  //----------------------------------------
+//   header("Location: study.php");
+
+//----------------------------------------
 // ▼データ登録処理後
 //----------------------------------------
 if($status==false){
@@ -87,7 +103,7 @@ if($status==false){
     // headerはphp処理が終わったとLocationの場所に遷移する指示
     // ファイル名の前には半角スペース
     //--------------------------------------------------
-    header("Location:chatgpt_prompt.php");
+    header("Location: study.php");
     exit;
 }
 

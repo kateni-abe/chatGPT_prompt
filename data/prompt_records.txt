@@ -1,4 +1,23 @@
-<textarea class='prompt_post shadow_min'>#命令書
+<textarea class='prompt_post shadow_min' name='promptsheet'>#命令書
+あなたはコピーライターです。
+以下の制約条件と入力文をもとに
+ネットで話題になる魅力的なタイトル案を出力してください。
+
+#制約条件
+・文字数は20文字程度
+・初学者にもわかりやすく
+・重要なキーワードを取り残さない
+・文章を簡潔に
+
+#入力文
+ChatGPTをみんなで学ぼう
+
+#出力文
+・タイトル案1:
+・タイトル案2:
+・タイトル案3:
+・タイトル案4:
+・タイトル案5:</textarea><textarea class='prompt_post shadow_min' name='promptsheet'>#命令書
 あなたはです。
 以下の制約条件と入力文をもとにを出力してください。
 
@@ -8,7 +27,8 @@
 #入力文
 
 
-#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
+#出力文
+</textarea><textarea class='prompt_post shadow_min' name='promptsheet'>#命令書
 あなたはです。
 以下の制約条件と入力文をもとにを出力してください。
 
@@ -18,7 +38,8 @@
 #入力文
 
 
-#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
+#出力文
+</textarea><textarea class='prompt_post shadow_min' name='promptsheet'>#命令書
 あなたはです。
 以下の制約条件と入力文をもとにを出力してください。
 
@@ -28,44 +49,24 @@
 #入力文
 
 
-#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
-あなたはです。
-以下の制約条件と入力文をもとにを出力してください。
+#出力文
+aaaaaaaaaaa</textarea><textarea class='prompt_post shadow_min' name='promptsheet'>#命令書
+あなたはコピーライターです。
+以下の制約条件と入力文をもとに
+ネットで話題になる魅力的なタイトル案を出力してください。
 
 #制約条件
-
-
-#入力文
-
-
-#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
-あなたはです。
-以下の制約条件と入力文をもとにを出力してください。
-
-#制約条件
-
+・文字数は20文字程度
+・初学者にもわかりやすく
+・重要なキーワードを取り残さない
+・文章を簡潔に
 
 #入力文
+ChatGPTをみんなで学ぼう
 
-
-#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
-あなたはです。
-以下の制約条件と入力文をもとにを出力してください。
-
-#制約条件
-
-
-#入力文
-
-
-#出力文</textarea><textarea class='prompt_post shadow_min'>#命令書
-あなたはです。
-以下の制約条件と入力文をもとにを出力してください。
-
-#制約条件
-
-
-#入力文
-
-
-#出力文</textarea>
+#出力文
+・タイトル案1:
+・タイトル案2:
+・タイトル案3:
+・タイトル案4:
+・タイトル案5:</textarea>
